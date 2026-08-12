@@ -1,7 +1,5 @@
 # AWS Cloud Platform
 
-A production-grade cloud platform demonstrating modern DevOps, cloud engineering, and infrastructure practices on Amazon Web Services (AWS).
-
 ## Purpose
 
 This project serves as a professional portfolio demonstrating practical, hands-on experience with:
