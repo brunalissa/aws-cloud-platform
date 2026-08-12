@@ -81,7 +81,7 @@ flowchart TB
 
 | Layer | Technology |
 |-------|-----------|
-| Application | Java 21, Spring Boot 3, Maven |
+| Application | Java 17, Spring Boot 3, Maven |
 | Database | PostgreSQL (Amazon RDS) |
 | Cache | Redis (Amazon ElastiCache) |
 | Storage | Amazon S3 |

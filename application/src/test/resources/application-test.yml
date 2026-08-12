@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${TEST_DATABASE_URL:jdbc:postgresql://localhost:5432/testdb}
+    username: test
+    password: test
+  flyway:
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+logging:
+  level:
+    com.cloudplatform.app: DEBUG
+    org.testcontainers: INFO

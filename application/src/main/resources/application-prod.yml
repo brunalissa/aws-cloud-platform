@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    com.cloudplatform.app: WARN
+    org.springframework.web: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [trace_id=%X{traceId}, span_id=%X{spanId}] %logger{36} - %msg%n"

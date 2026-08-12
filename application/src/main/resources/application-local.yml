@@ -1,0 +1,8 @@
+spring:
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    com.cloudplatform.app: DEBUG
+    org.springframework.web: DEBUG
