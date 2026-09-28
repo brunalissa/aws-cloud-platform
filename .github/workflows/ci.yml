@@ -1,0 +1,29 @@
+name: Application CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test-and-container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Unit and PostgreSQL integration tests
+        run: mvn -B --no-transfer-progress -f application/pom.xml verify
+      - run: docker compose config --quiet
+      - name: Build and start the local stack
+        run: docker compose up --build --wait --wait-timeout 180
+      - name: Check application health
+        run: curl --fail http://localhost:8080/actuator/health
+      - name: Container logs
+        if: failure()
+        run: docker compose logs
+      - name: Clean up
+        if: always()
+        run: docker compose down --volumes
